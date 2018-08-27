@@ -1,0 +1,74 @@
+{
+  "manifestVersion": 1,
+  "id": "aztools",
+  "name": "Azure Tools",
+  "version": "1.0.0",
+  "publisher": "stephane-eyskens",
+  "tags": [
+    "Azure",
+    "Azure Automation",
+    "Azure Log Analytics"
+  ],
+  "content": {
+    "details": {
+      "path": "overview.md"
+    }
+  },
+  "public": false,
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/stephaneey/azure-tools-extension"
+    },
+    "support": {
+      "uri": "https://github.com/stephaneey/azure-tools-extension/issues"
+    }
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "A toolbox to better integrate with Azure",
+  "categories": [
+    "Build and release"
+  ],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "files": [
+    {
+      "path": "runbook"
+    },
+    {
+      "path": "loganalytics"
+    },
+    {
+      "path": "images",
+      "addressable": true
+    }
+  ],
+
+  "contributions": [
+    {
+      "id": "runbook",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "runbook"
+      }
+    },
+    {
+      "id": "loganalytics",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "loganalytics"
+      }
+    }    
+
+  ]
+}
