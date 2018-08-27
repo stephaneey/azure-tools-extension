@@ -24,21 +24,30 @@ try {
 		$uri=$wh.WebhookURI
 	}
 	Write-Host "Calling webhook"
-    $response = Invoke-RestMethod -Method Post -Uri $uri -Body $body -ContentType "application/json"
-	$JobCompleted = $false
-	$waitingfor=0
-	while($JobCompleted -eq $false -and $wait -eq $true)
+    $response = Invoke-RestMethod -Method Post -Uri $uri -Body $body -ContentType "application/json"	
+	
+	if($wait -eq $true)
 	{
-		Start-Sleep -s 1
-		if($waitingfor -ge $timeout)
+		$JobCompleted = $false
+		$waitingfor=0
+		while($JobCompleted -eq $false)
 		{
-			throw "Timeout expired"
+			Start-Sleep -s 1
+			if($waitingfor -ge $timeout)
+			{
+				throw "Timeout expired"
+			}
+			$waitingfor++
+			$job=Get-AzureRmAutomationJob -Id $response.JobIds[0] -ResourceGroupName $rg -AutomationAccountName $AutomationAccount
+			Write-Host "status is $($job.Status)"
+			$JobCompleted = (($job.Status -match "Completed") -or ($job.Status -match "Failed") -or ($job.Status -match "Suspended") -or ($job.Status -match "Stopped")) 		
+		}    
+		if($JobCompleted -ne "Completed")
+		{
+			Write-Error "The job completed in a faulty state $($$JobCompleted) or has been stopped"
 		}
-		$waitingfor++
-		$job=Get-AzureRmAutomationJob -Id $response.JobIds[0] -ResourceGroupName $rg -AutomationAccountName $AutomationAccount
-		Write-Host "status is $($job.Status)"
-		$JobCompleted = (($job.Status -match "Completed") -or ($job.Status -match "Failed") -or ($job.Status -match "Suspended") -or ($job.Status -match "Stopped")) 
-	}    
+	}
+	
 } finally {
 	if($wh -ne $null)
 	{
