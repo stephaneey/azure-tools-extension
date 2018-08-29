@@ -2,12 +2,13 @@
   "manifestVersion": 1,
   "id": "aztools",
   "name": "Azure Tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "stephane-eyskens",
   "tags": [
     "Azure",
     "Azure Automation",
-    "Azure Log Analytics"
+    "Azure Log Analytics",
+    "Runbooks"
   ],
   "content": {
     "details": {

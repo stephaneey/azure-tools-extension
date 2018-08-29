@@ -1,5 +1,5 @@
 # azure-tools-extension
-Full Azure API Management suite and more VSTS extension
+A set of tools to bridge Dev & Ops together in Azure.
 # Disclaimer
 This software is provided as-is with no warranty of any kind. The extension has been tested on the Hosted 2017 agent and on a self-hosted Windows agent.
 # Azure Tools in a nutshell
