@@ -44,7 +44,7 @@ try {
 		}    
 		if($JobCompleted -ne "Completed")
 		{
-			Write-Error "The job completed in a faulty state $($$JobCompleted) or has been stopped"
+			Write-Error "The job completed in a faulty state $($JobCompleted) or has been stopped"
 		}
 	}
 	
