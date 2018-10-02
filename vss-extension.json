@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "aztools",
   "name": "Azure Tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "stephane-eyskens",
   "tags": [
     "Azure",
@@ -15,7 +15,7 @@
       "path": "overview.md"
     }
   },
-  "public": false,
+  "public": true,
   "links": {
     "getstarted": {
       "uri": "https://github.com/stephaneey/azure-tools-extension"
