@@ -1,0 +1,43 @@
+{
+  "Name":  "Automation Operator and Webhook creator",
+  "Id":  "818bcb5b-2c71-4f8e-ad4a-b3a7b1c5ca57",
+  "IsCustom":  true,
+  "Description":  "Can start, stop, suspend existing runbooks and create webhooks",
+  "Actions":  [
+                  "Microsoft.Authorization/*/read",
+                  "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/read",
+                  "Microsoft.Automation/automationAccounts/jobs/read",
+                  "Microsoft.Automation/automationAccounts/jobs/resume/action",
+                  "Microsoft.Automation/automationAccounts/jobs/stop/action",
+                  "Microsoft.Automation/automationAccounts/jobs/streams/read",
+"Microsoft.Automation/automationAccounts/jobs/output/read",
+"Microsoft.Automation/automationAccounts/jobs/suspend/action",
+"Microsoft.Automation/automationAccounts/jobs/write",
+"Microsoft.Automation/automationAccounts/jobSchedules/read",
+"Microsoft.Automation/automationAccounts/jobSchedules/write",
+"Microsoft.Automation/automationAccounts/linkedWorkspace/read",
+"Microsoft.Automation/automationAccounts/read",
+"Microsoft.Automation/automationAccounts/runbooks/read",
+"Microsoft.Automation/automationAccounts/schedules/read",
+"Microsoft.Automation/automationAccounts/schedules/write",
+"Microsoft.Automation/automationAccounts/webhooks/*",
+"Microsoft.Resources/deployments/*",
+                  "Microsoft.Resources/subscriptions/resourceGroups/read",
+                  "Microsoft.Insights/alertRules/*",
+                  "Microsoft.Insights/diagnosticSettings/*",
+                  "Microsoft.Support/*"
+  ],
+  "NotActions":  [
+
+                 ],
+  "DataActions":  [
+
+                  ],
+  "NotDataActions":  [
+
+                     ],
+  "AssignableScopes":  [
+                           "/subscriptions/<your subscription id>"
+                          
+                       ]
+}
