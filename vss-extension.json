@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "aztools",
   "name": "Azure Tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "stephane-eyskens",
   "tags": [
     "Azure",
@@ -31,7 +31,7 @@
   ],
   "description": "A toolbox to better integrate with Azure",
   "categories": [
-    "Build and release"
+    "Azure Pipelines"
   ],
   "icons": {
     "default": "images/extension-icon.png"
